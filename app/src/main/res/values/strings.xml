@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name" translatable="false">CookieVery</string>
+    <string name="app_ingresar">Ingresar</string>
+</resources>
