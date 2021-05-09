@@ -11,5 +11,6 @@
     <string name="app_formulario_telefono">Phone</string>
     <string name="app_formulario_correo">Email</string>
     <string name="app_formulario_guardar">Save</string>
+    <string name="app_formulario_contrasena">Password</string>
     <string name="app_button_cancelar">Cancel</string>
 </resources>
