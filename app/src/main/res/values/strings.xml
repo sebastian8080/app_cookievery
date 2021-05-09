@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">CookieVery</string>
     <string name="app_ingresar">Ingresar</string>
+<<<<<<< HEAD
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -12,4 +13,17 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+=======
+    <string name="app_registrar">Registrar</string>
+    <string name="app_login_usuario">Usuario</string>
+    <string name="app_login_password">Contraseña</string>
+    <string name="app_formulario_registro">Formulario de registro</string>
+    <string name="app_formulario_identificacion">Identificación</string>
+    <string name="app_formulario_nombre">Nombre</string>
+    <string name="app_formulario_direccion">Dirección</string>
+    <string name="app_formulario_telefono">Teléfono</string>
+    <string name="app_formulario_correo">Correo</string>
+    <string name="app_formulario_guardar">Guardar</string>
+    <string name="app_button_cancelar">Cancelar</string>
+>>>>>>> fffe1c7f5277d5ee428e2f49f74240245e8a71bb
 </resources>
