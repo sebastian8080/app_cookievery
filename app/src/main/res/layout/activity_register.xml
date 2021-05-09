@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="175dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="30dp"
+            >
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="18sp"
+                android:text="@string/app_formulario_registro"
+                android:textSize="24sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/app_formulario_identificacion"
+                />
+
+            <EditText
+                android:id="@+id/identificacionInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:autofillHints="@string/app_formulario_identificacion"
+                android:labelFor="@id/identificacionInput"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/app_formulario_nombre"
+                />
+
+            <EditText
+                android:id="@+id/nombreInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:autofillHints="@string/app_formulario_nombre"
+                android:labelFor="@id/nombreInput"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/app_formulario_direccion"
+                />
+
+            <EditText
+                android:id="@+id/direccionInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:autofillHints="@string/app_formulario_direccion"
+                android:labelFor="@id/direccionInput"
+                android:layout_marginBottom="20dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/app_formulario_telefono"
+                />
+
+            <EditText
+                android:id="@+id/telefonoInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="phone"
+                android:autofillHints="@string/app_formulario_telefono"
+                android:labelFor="@id/telefonoInput"
+                android:layout_marginBottom="20dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/app_formulario_correo"
+                />
+
+            <EditText
+                android:id="@+id/correoInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textEmailAddress"
+                android:autofillHints="@string/app_formulario_correo"
+                android:labelFor="@id/correoInput"
+                android:layout_marginBottom="20dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonFormularioCancelar"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/app_button_cancelar"
+                    android:background="@color/white"
+                    android:layout_alignParentStart="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <Button
+                    android:id="@+id/buttonFormularioGuardar"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/app_formulario_guardar"
+                    android:background="@color/orange"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
