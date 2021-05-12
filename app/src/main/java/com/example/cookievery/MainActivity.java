@@ -12,6 +12,8 @@ import com.example.cookievery.helpers.DataHelper;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String CLIENTE_LOGIN = "com.example.cookievery.cliente_identificacion";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         clienteRepository.login(
                 getTextValue(R.id.userLogin),
                 getTextValue(R.id.passwordLogin)
-        ).ifPresent((c) -> {
+        ).ifPresent((cliente) -> {
             Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra(CLIENTE_LOGIN, cliente.getIdentificacion());
             startActivity(intent);
         });
-//        System.out.println("PRINT THE LOGIN");
     }
 
     private String getTextValue(int idText) {
