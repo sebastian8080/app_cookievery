@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.cookievery.data.ClienteRepository;
-import com.example.cookievery.helpers.DataHelper;
+import com.example.cookievery.models.Cliente;
+
+import java.util.Optional;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,18 +30,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View view) {
         ClienteRepository clienteRepository = new ClienteRepository(this);
-        clienteRepository.login(
+        Optional<Cliente> clienteLogin = clienteRepository.login(
                 getTextValue(R.id.userLogin),
                 getTextValue(R.id.passwordLogin)
-        ).ifPresent((cliente) -> {
+        );
+        clienteLogin.ifPresent((cliente) -> {
             Intent intent = new Intent(this, HomeActivity.class);
             intent.putExtra(CLIENTE_LOGIN, cliente.getIdentificacion());
             startActivity(intent);
         });
+        if (!clienteLogin.isPresent()) {
+            Toast.makeText(this, "Usuario o contraseña incorrectos.", Toast.LENGTH_LONG).show();
+        }
     }
 
     private String getTextValue(int idText) {
-        EditText editText = (EditText) findViewById(idText);
+        EditText editText = findViewById(idText);
         return editText.getText().toString().trim();
     }
 
