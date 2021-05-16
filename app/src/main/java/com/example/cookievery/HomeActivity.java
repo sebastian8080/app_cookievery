@@ -1,28 +1,40 @@
 package com.example.cookievery;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.cookievery.app.ClienteLoged;
 import com.example.cookievery.data.ClienteRepository;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.view.View;
-import android.widget.TextView;
-
 public class HomeActivity extends AppCompatActivity {
 
-    private String identificacion;
+    private Context context;
 
+    private String identificacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_home);
+
+        FloatingActionButton btnProd = (FloatingActionButton) findViewById(R.id.btnProductos);
+        btnProd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ProductoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ClienteLoged cliente = ClienteLoged.getInstance();
         Intent intent = getIntent();
@@ -31,7 +43,6 @@ public class HomeActivity extends AppCompatActivity {
             cliente.setIdentificacion(identificacion);
         }
 
-        setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,6 +64,8 @@ public class HomeActivity extends AppCompatActivity {
             final String userText = "Usuario: " + cliente.getIdentificacion();
             textView.setText(userText);
         }
+
+
     }
 
     public void deletePerfil(View view) {
@@ -72,4 +85,6 @@ public class HomeActivity extends AppCompatActivity {
                 }).setNegativeButton("No", null)
                 .show();
     }
+
+
 }

@@ -31,4 +31,14 @@
         android:contentDescription="@string/edit_description"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+
+        android:translationX="340dp"
+        android:translationY="590dp"
+        app:srcCompat="@drawable/ic_launcher_cookievery_logo_foreground" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

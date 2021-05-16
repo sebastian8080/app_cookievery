@@ -28,4 +28,21 @@ public final class CookieveryContract {
 
     }
 
+    public static class FeedProducto implements BaseColumns{
+        public static final String TABLE_NAME = "producto";
+        public static final String COLUMN_PRODUCTO_ID = "producto_id";
+        public static final String COLUMN_NOMBRE_PRODUCTO = "nombre_producto";
+        public static final String COLUMN_DESCRIPCION_PRODUCTO = "descripcion_producto";
+        public static final String COLUMN_PRECIO_PRODUCTO = "precio_producto";
+
+        public static final String SQL_CREATE_PRODUCTO =
+                "CREATE TABLE " + FeedProducto.TABLE_NAME + " (" +
+                        FeedProducto.COLUMN_PRODUCTO_ID + " INTEGER PRIMARY KEY, " +
+                        FeedProducto.COLUMN_NOMBRE_PRODUCTO + " TEXT, " +
+                        FeedProducto.COLUMN_DESCRIPCION_PRODUCTO + " TEXT, " +
+                        FeedProducto.COLUMN_PRECIO_PRODUCTO + " NUMERIC)";
+
+        public static final String SQL_DELETE_PRODUCTO = "DROP TABLE IF EXISTS " + FeedProducto.TABLE_NAME;
+    }
+
 }

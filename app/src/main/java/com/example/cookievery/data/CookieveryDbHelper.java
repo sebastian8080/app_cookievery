@@ -25,11 +25,13 @@ public class CookieveryDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CookieveryContract.FeedCliente.SQL_CREATE_CLIENTE);
+        db.execSQL(CookieveryContract.FeedProducto.SQL_CREATE_PRODUCTO);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(CookieveryContract.FeedCliente.SQL_DELETE_CLIENTE);
+        db.execSQL(CookieveryContract.FeedProducto.SQL_DELETE_PRODUCTO);
         onCreate(db);
     }
 
